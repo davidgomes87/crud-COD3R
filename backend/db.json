@@ -1,0 +1,51 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "Um sonho de Liberdade",
+      "type": "Drama",
+      "year": "1995",
+      "imdb": "92"
+    },
+    {
+      "name": "O Poderoso Chefão",
+      "type": "Drama",
+      "year": "1972",
+      "imdb": "92",
+      "id": 2
+    },
+    {
+      "name": "Matrix",
+      "type": "action",
+      "year": "1999",
+      "imdb": "85",
+      "id": 3
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "name": "Shadow of War",
+      "type": "RPG",
+      "year": "2020"
+    },
+    {
+      "name": "Mad Max",
+      "type": "Ação, Rpg",
+      "year": "2016",
+      "id": 2
+    },
+    {
+      "name": "Resident Evil 3",
+      "type": "horror",
+      "year": "2021",
+      "id": 3
+    },
+    {
+      "name": "Bomber Man 4",
+      "type": "aventura",
+      "year": "1994",
+      "id": 4
+    }
+  ]
+}

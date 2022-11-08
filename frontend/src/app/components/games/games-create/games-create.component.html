@@ -1,0 +1,47 @@
+<div class="componentsContainer">
+
+<h1>Cadastro de Jogos</h1>
+
+
+
+<form [formGroup]="gameForm"  action="">
+    <mat-form-field>
+        <input matInput placeholder="Nome" [(ngModel)]="game.name" formControlName="name">
+    </mat-form-field>
+    <div class="mensagem__erro" *ngIf="gameForm.get('name')?.errors && gameForm.get('name')?.touched" > Nome é obrigatório </div>
+
+
+
+  <mat-form-field appearance="fill">
+
+    <mat-select placeholder ="Selecione uma Categoria" [(ngModel)]="game.type" formControlName="type">
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria.value"  >
+          {{categoria.viewValue}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field> 
+    <div class="mensagem__erro" *ngIf="gameForm.get('type')?.errors && gameForm.get('type')?.touched" > Escolha uma Categoria</div>
+   
+
+    <mat-form-field>
+        <input matInput placeholder="Lançamento" [(ngModel)]="game.year"  formControlName="year">
+    </mat-form-field>
+
+    <div class="mensagem__erro" *ngIf="gameForm.get('year')?.errors && gameForm.get('year')?.touched" > Digite um ano de lançamento </div>
+
+
+
+
+
+</form>
+
+<mat-card-actions class="button-row" >
+
+
+<button mat-flat-button [disabled]="!gameForm.valid" color="primary" (click)="cadastrarGame()">Cadastrar Jogo </button>
+<button mat-flat-button routerLink="/games" color="warn"><i class="material-icons">arrow_back</i>Voltar pra o Inicio</button>
+
+</mat-card-actions>
+
+</div>

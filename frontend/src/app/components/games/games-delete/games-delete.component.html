@@ -1,0 +1,68 @@
+<div class="componentsContainer">
+
+    <h1>Deletar Jogo</h1>
+    
+    
+    
+    <form action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="game.name" name="name">
+        </mat-form-field>
+    
+    
+    
+      <mat-form-field appearance="fill">
+    
+        <mat-select placeholder ="Selecione uma Categoria" [(ngModel)]="game.type" name="type">
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria.value"  >
+              {{categoria.viewValue}}
+            </mat-option>
+          </mat-select>
+    
+        </mat-form-field> 
+        
+       
+    
+        <mat-form-field>
+            <input matInput placeholder="Lançamento" [(ngModel)]="game.year"  name="year">
+        </mat-form-field>
+    
+    
+    
+    
+    
+    </form>
+    
+    <mat-card-actions class="button-row " >
+    
+      <button type="button" mat-flat-button color="warn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Delete Jogo
+      </button>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar {{game.name}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    Tem Certeza que quer deletar <strong>{{game.name}}</strong>, Zé? Não tem volta!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button mat-flat-button color="warn" (click)="deleteGame()" >Deletar Jogo </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+    <!--<button mat-flat-button color="warn" (click)="deleteGame()" >Deletar Jogo </button> -->
+    <button mat-flat-button routerLink="/games" color="primary"><i class="material-icons">arrow_back</i>Voltar pra o Inicio</button>
+    
+    </mat-card-actions>
+    
+    </div>

@@ -1,0 +1,57 @@
+<div class="componentsContainer">
+
+<h1>Meus Filmes Favoritos</h1>
+
+
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">IMDB</th>
+        <th scope="col">Ano</th>
+        <th scope="col">Ações</th>
+        
+      </tr>
+    </thead>
+   
+    <tbody>
+
+
+      <tr *ngFor="let movie of movies">
+        <th scope="row">{{movie.id}}</th>
+        <td>{{movie.name}}</td>
+        <td>{{movie.type}}</td>
+        <td>{{movie.imdb}}</td>
+        <td>{{movie.year}}</td>
+        <td><a routerLink="/movies-update/{{movie.id}}"><i class="material-icons edit"> edit</i></a>
+            <a routerLink="/movies-delete/{{movie.id}}"><i class="material-icons delete"> delete</i></a></td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+      
+    </tbody>
+
+  </table>
+
+
+  <mat-card-actions class="button-row" >
+
+    <button mat-flat-button routerLink="/movies-create" color="primary"><i class="material-icons"> add</i>Cadastrar Filme</button>
+    <button mat-flat-button routerLink="" color="warn"><i class="material-icons">arrow_back</i>Voltar pra o Inicio</button>
+    
+    
+</mat-card-actions>
+
+
+</div>

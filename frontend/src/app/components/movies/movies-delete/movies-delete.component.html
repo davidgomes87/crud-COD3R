@@ -1,0 +1,67 @@
+<div class="componentsContainer">
+
+    <h1>Deletar Filme</h1>
+    
+    
+    
+    <form action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="movie.name" name="name">
+        </mat-form-field>
+    
+    
+    
+      <mat-form-field appearance="fill">
+    
+        <mat-select placeholder ="Selecione uma Categoria" [(ngModel)]="movie.type" name="type">
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria.value"  >
+              {{categoria.viewValue}}
+            </mat-option>
+          </mat-select>
+    
+        </mat-form-field> 
+        
+           
+        <mat-form-field>
+            <input matInput placeholder="Imdb" [(ngModel)]="movie.imdb"  name="imdb">
+        </mat-form-field>
+    
+    
+        <mat-form-field>
+            <input matInput placeholder="Lançamento" [(ngModel)]="movie.year"  name="year">
+        </mat-form-field>
+    
+    
+     
+    
+    
+    </form>
+    
+    <mat-card-actions class="button-row " >
+    
+      <button type="button" mat-flat-button color="warn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Delete Filme
+      </button>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar {{movie.name}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    Tem Certeza que quer deletar <strong>{{movie.name}}</strong>, Zé? Esse é um filmão!!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button mat-flat-button color="warn" (click)="deleteMovie()" >Deletar Filme </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <button mat-flat-button routerLink="/movies" color="primary"><i class="material-icons">arrow_back</i>Voltar pra o Inicio</button>
+    
+    </mat-card-actions>
+    
+    </div>

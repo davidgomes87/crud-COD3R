@@ -1,0 +1,52 @@
+<div class="componentsContainer">
+
+    <h1>Cadastro de Filmes</h1>
+    
+    
+    
+    <form [formGroup]="movieForm"  action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="movie.name" formControlName="name">
+        </mat-form-field>
+        <div class="mensagem__erro" *ngIf="movieForm.get('name')?.errors && movieForm.get('name')?.touched" > Nome é obrigatório </div>
+    
+    
+    
+      <mat-form-field appearance="fill">
+    
+        <mat-select placeholder ="Selecione uma Categoria" [(ngModel)]="movie.type" formControlName="type">
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria.value"  >
+              {{categoria.viewValue}}
+            </mat-option>
+          </mat-select>
+    
+        </mat-form-field> 
+        <div class="mensagem__erro" *ngIf="movieForm.get('type')?.errors && movieForm.get('type')?.touched" > Escolha uma Categoria</div>
+       
+        <mat-form-field>
+            <input matInput placeholder="imdb" [(ngModel)]="movie.imdb"  formControlName="imdb">
+        </mat-form-field>
+    
+        <div class="mensagem__erro" *ngIf="movieForm.get('imdb')?.errors && movieForm.get('imdb')?.touched" > Digite um ano de lançamento </div>
+    
+        <mat-form-field>
+            <input matInput placeholder="Lançamento" [(ngModel)]="movie.year"  formControlName="year">
+        </mat-form-field>
+    
+        <div class="mensagem__erro" *ngIf="movieForm.get('year')?.errors && movieForm.get('year')?.touched" > Digite um ano de lançamento </div>
+    
+    
+    
+    
+    
+    </form>
+    
+    <mat-card-actions class="button-row" >
+    
+    
+    <button mat-flat-button [disabled]="!movieForm.valid" color="primary" (click)="cadastrarFilme()">Cadastrar Filme </button>
+    <button mat-flat-button routerLink="/movies" color="warn"><i class="material-icons">arrow_back</i>Voltar pra o Inicio</button>
+    
+    </mat-card-actions>
+    
+    </div>
